@@ -6,13 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): any {
-    return this.appService.getHello(
-      true,
-      {service : "purchase-api",
-        version: "1.0.0"
-      },
-      "Hello NestJS"
-    );
+  getHello(): string {
+    return this.appService.getHello();
   }
 }

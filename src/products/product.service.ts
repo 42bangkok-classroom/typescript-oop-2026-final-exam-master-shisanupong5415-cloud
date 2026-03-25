@@ -8,6 +8,10 @@ export class ProductService {
   findAll() {
     const filePath = path.join(process.cwd(), 'data', 'products.json');
     const data = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(data) as IUser[];
+    return {
+        data: JSON.parse(data) as IUser[],
+        message: 'Fetched products successfully',
+        success: true
   }
+}
 }
